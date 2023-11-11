@@ -1,1 +1,1 @@
-# SHA-256-hash
+Calculates the SHA-256 hash and build the Karnaugh map based on its XOR
