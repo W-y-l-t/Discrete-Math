@@ -1,10 +1,50 @@
 # input boolean function number
-print("Enter Boolean function number")
-data = int(input())
-f_value = bin(data)[2::]
-print(f_value)
-while len(f_value) < 2 ^ 4:
+
+print("How you want to insert boolean function? \n"
+      "1. By boolean function number \n"
+      "2. By min terms \n"
+      "3. By XOR of two boolean function numbers \n"
+      "4. By the values of the function in the truth table\n")
+
+key = int(input())
+
+f_value = ""
+
+if key == 1:
+    print("Enter Boolean function number")
+
+    data = int(input())
+    f_value = bin(data)[2::]
+else:
+    if key == 2:
+        print("Enter min terms")
+
+        data = list(map(int, input().split(' ')))
+        now = 0
+        for i in range(0, 2 ** 4):
+            if now < len(data) and data[now] == i:
+                f_value += '1'
+                now += 1
+            else:
+                f_value += '0'
+    else:
+        if key == 3:
+            print("Enter first boolean function number")
+            first = int(input())
+            print("Enter second boolean function number")
+            second = int(input())
+
+            f_value = bin(first ^ second)[2::]
+        else:
+            if key == 4:
+                f_value = input()
+            else:
+                print("Invalid request")
+                exit(1)
+
+while len(f_value) < 2 ** 4:
     f_value = '0' + f_value
+print(f_value)
 
 # combination of values A, B
 height_values = ['00', '01', '11', '10']
