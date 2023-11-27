@@ -1,1 +1,1 @@
-Repository for codes for homework in discrete mathematics
+Repository for storing programs with which some homework tasks were completed
